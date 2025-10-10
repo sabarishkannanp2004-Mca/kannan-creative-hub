@@ -1,84 +1,62 @@
-import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import profileImage from "@/assets/profile.png";
 
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.querySelector(sectionId);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 lg:px-12">
-      <div className="max-w-6xl w-full">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 lg:px-12 py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div className="space-y-4">
-              <p className="text-primary font-medium animate-fade-in">Hi, I'm</p>
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight animate-letter-reveal">
-                <span className="text-navy">Sabarish</span>
-                <br />
-                <span className="text-navy">Kannan P</span>
-              </h1>
-              <h2 className="text-2xl lg:text-3xl text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Full Stack Developer — React & Node.js
-              </h2>
+          <div className="animate-fade-in">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-purple text-2xl">✨</span>
+              <span className="text-purple font-medium tracking-wide uppercase text-sm">Available for Projects</span>
             </div>
-
-            <p className="text-lg text-muted-foreground max-w-xl animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              Passionate about building beautiful and functional web applications. 
-              Specializing in modern frontend and backend technologies.
+            
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              Hi, I'm <span className="text-purple animate-fade-in" style={{ animationDelay: "0.2s" }}>Sabarish!</span>
+              <br />
+              <span className="text-navy">Full Stack Developer</span>
+            </h1>
+            
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl">
+              I'm a passionate full stack developer specializing in building exceptional digital experiences. I build responsive web applications using modern technologies.
             </p>
-
-            <div className="flex flex-wrap gap-4 animate-slide-in-up" style={{ animationDelay: "0.6s" }}>
-              <Button 
-                size="lg"
-                onClick={() => scrollToSection("#projects")}
-                className="group"
-              >
-                See Projects
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="text-lg px-8" onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
+                View Projects <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/resume.pdf';
-                  link.download = 'Sabarish_Kannan_Resume.pdf';
-                  link.click();
-                }}
-                className="group"
-              >
-                <Download className="mr-2 group-hover:scale-110 transition-transform" size={20} />
-                View Resume
+              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                Let's Talk
               </Button>
             </div>
           </div>
-
-          {/* Right Content - Decorative Circle */}
-          <div className="relative animate-slide-in-right hidden lg:block">
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple/20 to-light-purple/20 rounded-full animate-pulse" />
-              <div className="absolute inset-8 bg-gradient-to-br from-purple to-light-purple rounded-full flex items-center justify-center">
-                <div className="w-full h-full rounded-full bg-card m-4 flex flex-col items-center justify-center p-8">
-                  <div className="text-center space-y-4">
-                    <div className="space-y-2">
-                      <div className="text-5xl font-bold text-navy">3+</div>
-                      <div className="text-sm text-muted-foreground">Years Experience</div>
-                    </div>
-                    <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
-                    <div className="space-y-2">
-                      <div className="text-5xl font-bold text-navy">50+</div>
-                      <div className="text-sm text-muted-foreground">Projects Completed</div>
-                    </div>
-                  </div>
-                </div>
+          
+          {/* Right Image */}
+          <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* Decorative stars */}
+              <div className="absolute -top-8 -right-8 text-purple/20 animate-pulse" style={{ animationDuration: "3s" }}>
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
+                  <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
+                </svg>
               </div>
-              {/* Floating decorative elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-purple rounded-full animate-bounce" style={{ animationDelay: "0s", animationDuration: "3s" }} />
-              <div className="absolute top-1/4 -left-8 w-6 h-6 bg-light-purple rounded-full animate-bounce" style={{ animationDelay: "1s", animationDuration: "4s" }} />
-              <div className="absolute bottom-1/4 -right-8 w-10 h-10 bg-accent rounded-full animate-bounce" style={{ animationDelay: "2s", animationDuration: "5s" }} />
+              <div className="absolute -bottom-12 -left-8 text-purple/10 animate-pulse" style={{ animationDuration: "4s", animationDelay: "1s" }}>
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="currentColor">
+                  <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
+                </svg>
+              </div>
+              
+              {/* Profile Image Circle */}
+              <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-purple shadow-2xl">
+                <img 
+                  src={profileImage} 
+                  alt="Sabarish Kannan P" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                />
+              </div>
             </div>
           </div>
         </div>

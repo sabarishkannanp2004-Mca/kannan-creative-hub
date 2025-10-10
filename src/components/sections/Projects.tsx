@@ -1,81 +1,92 @@
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const projects = [
     {
-      title: "To-Do List",
-      description: "A modern task management app with drag-and-drop functionality and local storage",
-      category: "Web App",
-      gradient: "from-purple to-light-purple",
+      title: "Todo List Application",
+      description: "A feature-rich todo list app with task management, categories, and local storage persistence.",
+      category: "Web Application",
+      tags: ["React", "JavaScript", "CSS"],
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&h=300&fit=crop",
     },
     {
-      title: "Stopwatch",
-      description: "Precise stopwatch application with lap timing and split functionality",
-      category: "Utility",
-      gradient: "from-blue-400 to-blue-600",
+      title: "Stopwatch Timer",
+      description: "A precise stopwatch application with lap timing, pause/resume functionality, and clean UI.",
+      category: "Utility App",
+      tags: ["JavaScript", "HTML", "CSS"],
+      image: "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=500&h=300&fit=crop",
     },
     {
       title: "E-commerce Website",
-      description: "Full-featured online shopping platform with cart and checkout system",
-      category: "Full Stack",
-      gradient: "from-green-400 to-emerald-600",
+      description: "A modern e-commerce platform with product catalog, shopping cart, and checkout functionality.",
+      category: "Web Application",
+      tags: ["React", "Node.js", "CSS"],
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=500&h=300&fit=crop",
     },
     {
       title: "Calculator",
-      description: "Scientific calculator with advanced mathematical operations",
-      category: "Web App",
-      gradient: "from-orange-400 to-red-500",
+      description: "A sleek calculator app with advanced mathematical operations and responsive design.",
+      category: "Utility App",
+      tags: ["JavaScript", "HTML", "CSS"],
+      image: "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=500&h=300&fit=crop",
     },
     {
       title: "Tour Website",
-      description: "Beautiful travel booking platform with interactive maps and galleries",
-      category: "Frontend",
-      gradient: "from-pink-400 to-purple-600",
+      description: "An elegant tourism website showcasing destinations with beautiful imagery and booking features.",
+      category: "Web Application",
+      tags: ["React", "JavaScript", "CSS"],
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=300&fit=crop",
     },
   ];
 
   return (
     <section id="projects" className="min-h-screen flex items-center justify-center px-6 lg:px-12 py-20">
-      <div className="max-w-6xl w-full">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16 animate-fade-in">
-          <p className="text-primary font-medium mb-2">PROJECTS</p>
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy">Recent Work</h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A showcase of my recent projects and achievements
+          <p className="text-purple font-medium tracking-wide uppercase text-sm mb-4">- Projects</p>
+          <h2 className="text-5xl lg:text-6xl font-bold text-navy mb-6">Recent Completed Works</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills and experience
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-300 animate-slide-in-up cursor-pointer"
-              style={{ animationDelay: `${index * 0.1}s`, opacity: 0, animationFillMode: "forwards" }}
+              className="bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-all hover:-translate-y-2 animate-scale-in group"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-90 group-hover:opacity-100 transition-opacity`} />
-              
-              {/* Content */}
-              <div className="relative p-8 h-64 flex flex-col justify-between text-white">
-                <div>
-                  <span className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium mb-4">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                  <p className="text-white/90 text-sm">{project.description}</p>
-                </div>
-                
-                {/* Hover Effect */}
-                <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-medium">View Project</span>
-                  <ExternalLink size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <p className="text-purple text-sm font-medium uppercase tracking-wide mb-2">{project.category}</p>
+                <h3 className="text-2xl font-bold text-navy mb-3">{project.title}</h3>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-1 bg-purple/10 text-purple text-sm font-medium rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-
-              {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:translate-x-12 group-hover:-translate-y-12 transition-transform" />
             </div>
           ))}
+        </div>
+
+        <div className="text-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
+          <Button size="lg" variant="outline" className="text-lg px-8">
+            View All Projects
+          </Button>
         </div>
       </div>
     </section>
