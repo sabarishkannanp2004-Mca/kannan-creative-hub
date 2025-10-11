@@ -1,37 +1,38 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import profileImage from "@/assets/profile.png";
+import "./Hero.css";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 lg:px-12 py-20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="home" className="hero-section">
+      <div className="hero-container">
+        <div className="hero-grid">
           {/* Left Content */}
-          <div className="animate-fade-in">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-purple text-2xl">✨</span>
-              <span className="text-purple font-medium tracking-wide uppercase text-sm">Available for Projects</span>
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="hero-badge-icon">✨</span>
+              <span className="hero-badge-text">Available for Projects</span>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Hi, I'm <span className="text-purple animate-fade-in" style={{ animationDelay: "0.2s" }}>Sabarish!</span>
+            <h1 className="hero-title">
+              Hi, I'm <span className="hero-name">Sabarish!</span>
               <br />
-              <span className="text-navy">Full Stack Developer</span>
+              <span className="hero-subtitle">Full Stack Developer</span>
             </h1>
             
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl">
+            <p className="hero-description">
               I'm a passionate full stack developer specializing in building exceptional digital experiences. I build responsive web applications using modern technologies.
             </p>
             
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="text-lg px-8" onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
-                View Projects <ArrowRight className="ml-2" size={20} />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-lg px-8" 
+            <div className="hero-buttons">
+              <button 
+                className="btn btn-primary"
+                onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View Projects <ArrowRight size={20} />
+              </button>
+              <button 
+                className="btn btn-outline"
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = '/psk_resume.pdf';
@@ -40,34 +41,37 @@ const Hero = () => {
                 }}
               >
                 View CV
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              </button>
+              <button 
+                className="btn btn-outline"
+                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
                 Let's Talk
-              </Button>
+              </button>
             </div>
           </div>
           
           {/* Right Image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <div className="relative w-full max-w-lg mx-auto">
+          <div className="hero-image-wrapper">
+            <div className="hero-image-container">
               {/* Decorative stars */}
-              <div className="absolute -top-8 -right-8 text-purple/20 animate-pulse" style={{ animationDuration: "3s" }}>
+              <div className="hero-star-1">
                 <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
                   <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
                 </svg>
               </div>
-              <div className="absolute -bottom-12 -left-8 text-purple/10 animate-pulse" style={{ animationDuration: "4s", animationDelay: "1s" }}>
+              <div className="hero-star-2">
                 <svg width="80" height="80" viewBox="0 0 100 100" fill="currentColor">
                   <path d="M50 0 L61 39 L100 50 L61 61 L50 100 L39 61 L0 50 L39 39 Z" />
                 </svg>
               </div>
               
               {/* Profile Image Circle */}
-              <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-purple shadow-2xl animate-float">
+              <div className="hero-image-circle">
                 <img 
                   src={profileImage} 
-                  alt="Sabarish Kannan P" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 animate-zoom-pulse"
+                  alt="Sabarish Kannan P - Full Stack Developer" 
+                  className="hero-profile-image"
                 />
               </div>
             </div>

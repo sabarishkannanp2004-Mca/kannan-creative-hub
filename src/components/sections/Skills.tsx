@@ -1,3 +1,5 @@
+import "./Skills.css";
+
 const Skills = () => {
   const skills = [
     {
@@ -35,39 +37,39 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center px-6 lg:px-12 py-20 bg-secondary/30">
-      <div className="max-w-6xl mx-auto w-full">
-        <div className="text-center mb-12 animate-fade-in">
-          <p className="text-purple font-medium tracking-wide uppercase text-sm mb-4">- My Skills</p>
-          <h2 className="text-5xl lg:text-6xl font-bold text-navy mb-6">Technologies I Work With</h2>
+    <section id="skills" className="skills-section">
+      <div className="skills-container">
+        <div className="skills-header">
+          <p className="skills-subtitle">- My Skills</p>
+          <h2 className="skills-title">Technologies I Work With</h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="skills-grid">
           {skills.map((skill, index) => (
             <div
               key={skill.name}
-              className="bg-card p-8 rounded-2xl shadow-card hover:shadow-hover transition-all hover:-translate-y-2 animate-scale-in group hover:rotate-2 hover:bg-gradient-to-br hover:from-purple/5 hover:to-light-purple/5"
+              className="skill-card"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-20 h-20 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 animate-bounce-slow">
-                  <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain drop-shadow-lg" />
+              <div className="skill-content">
+                <div className="skill-icon-wrapper">
+                  <img src={skill.icon} alt={`${skill.name} icon`} className="skill-icon" />
                 </div>
-                <h3 className="text-lg font-semibold text-navy group-hover:text-purple transition-colors">{skill.name}</h3>
+                <h3 className="skill-name">{skill.name}</h3>
               </div>
             </div>
           ))}
         </div>
 
         {/* Always Learning Card */}
-        <div className="bg-gradient-to-br from-purple/10 to-light-purple/10 p-12 rounded-3xl text-center animate-fade-in" style={{ animationDelay: "0.8s" }}>
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 rounded-full bg-purple/20 flex items-center justify-center">
-              <span className="text-4xl">💻</span>
+        <div className="learning-card">
+          <div className="learning-icon-wrapper">
+            <div className="learning-icon">
+              <span>💻</span>
             </div>
           </div>
-          <h3 className="text-3xl font-bold text-navy mb-4">Always Learning</h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h3 className="learning-title">Always Learning</h3>
+          <p className="learning-description">
             I'm constantly expanding my skillset and staying updated with the latest technologies and best practices in web development.
           </p>
         </div>

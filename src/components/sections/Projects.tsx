@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import "./Projects.css";
 
 const Projects = () => {
   const projects = [
@@ -47,40 +47,37 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center px-6 lg:px-12 py-20">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="text-center mb-16 animate-fade-in">
-          <p className="text-purple font-medium tracking-wide uppercase text-sm mb-4">- Projects</p>
-          <h2 className="text-5xl lg:text-6xl font-bold text-navy mb-6">Recent Completed Works</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <section id="projects" className="projects-section">
+      <div className="projects-container">
+        <div className="projects-header">
+          <p className="projects-subtitle">- Projects</p>
+          <h2 className="projects-title">Recent Completed Works</h2>
+          <p className="projects-description">
             Here are some of my recent projects that showcase my skills and experience
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="projects-grid">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-card rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-all hover:-translate-y-2 animate-scale-in group"
+              className="project-card"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="project-image-wrapper">
                 <img 
                   src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  alt={`${project.title} project screenshot`}
+                  className="project-image"
                 />
               </div>
-              <div className="p-6">
-                <p className="text-purple text-sm font-medium uppercase tracking-wide mb-2">{project.category}</p>
-                <h3 className="text-2xl font-bold text-navy mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
+              <div className="project-content">
+                <p className="project-category">{project.category}</p>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-tags">
                   {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-1 bg-purple/10 text-purple text-sm font-medium rounded-full"
-                    >
+                    <span key={tag} className="project-tag">
                       {tag}
                     </span>
                   ))}
@@ -90,10 +87,10 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center animate-fade-in" style={{ animationDelay: "0.5s" }}>
-          <Button size="lg" variant="outline" className="text-lg px-8">
+        <div className="projects-footer">
+          <button className="btn btn-outline">
             View All Projects
-          </Button>
+          </button>
         </div>
       </div>
     </section>
