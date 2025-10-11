@@ -46,14 +46,14 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={skill.name}
-              className="bg-card p-8 rounded-2xl shadow-card hover:shadow-hover transition-all hover:-translate-y-2 animate-scale-in group"
+              className="bg-card p-8 rounded-2xl shadow-card hover:shadow-hover transition-all hover:-translate-y-2 animate-scale-in group hover:rotate-2 hover:bg-gradient-to-br hover:from-purple/5 hover:to-light-purple/5"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col items-center gap-4">
-                <div className="w-20 h-20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain" />
+                <div className="w-20 h-20 flex items-center justify-center group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 animate-bounce-slow">
+                  <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain drop-shadow-lg" />
                 </div>
-                <h3 className="text-lg font-semibold text-navy">{skill.name}</h3>
+                <h3 className="text-lg font-semibold text-navy group-hover:text-purple transition-colors">{skill.name}</h3>
               </div>
             </div>
           ))}

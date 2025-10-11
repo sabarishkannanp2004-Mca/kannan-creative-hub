@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
+      title: "AI Crime Generator",
+      description: "An intelligent crime data generation system using React frontend and Neon database for real-time analytics and visualization.",
+      category: "AI Application",
+      tags: ["React", "Neon DB", "AI"],
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&h=300&fit=crop",
+    },
+    {
       title: "Todo List Application",
       description: "A feature-rich todo list app with task management, categories, and local storage persistence.",
       category: "Web Application",

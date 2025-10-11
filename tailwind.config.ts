@@ -52,6 +52,10 @@ export default {
         "light-purple": "hsl(var(--light-purple))",
         mint: "hsl(var(--mint))",
       },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-card': 'var(--gradient-card)',
+      },
       boxShadow: {
         card: "var(--shadow-card)",
         hover: "var(--shadow-hover)",

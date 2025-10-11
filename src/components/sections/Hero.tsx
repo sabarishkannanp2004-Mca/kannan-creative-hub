@@ -28,6 +28,19 @@ const Hero = () => {
               <Button size="lg" className="text-lg px-8" onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}>
                 View Projects <ArrowRight className="ml-2" size={20} />
               </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8" 
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/psk_resume.pdf';
+                  link.download = 'Sabarish_Kannan_Resume.pdf';
+                  link.click();
+                }}
+              >
+                View CV
+              </Button>
               <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Let's Talk
               </Button>
@@ -50,11 +63,11 @@ const Hero = () => {
               </div>
               
               {/* Profile Image Circle */}
-              <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-purple shadow-2xl">
+              <div className="relative w-full aspect-square rounded-full overflow-hidden border-8 border-purple shadow-2xl animate-float">
                 <img 
                   src={profileImage} 
                   alt="Sabarish Kannan P" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 animate-zoom-pulse"
                 />
               </div>
             </div>
