@@ -35,8 +35,8 @@ const Hero = () => {
                 className="btn btn-outline"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/psk_resume.pdf';
-                  link.download = 'Sabarish_Kannan_Resume.pdf';
+                  link.href = '/kannan.pdf';
+                  link.download = 'kannan resume.pdf';
                   link.click();
                 }}
               >
@@ -69,7 +69,7 @@ const Hero = () => {
               {/* Profile Image Circle */}
               <div className="hero-image-circle">
                 <img 
-                  src={profileImage} 
+                  src="https://i.postimg.cc/sgsKYJ5r/IMG-4625.jpg" 
                   alt="Sabarish Kannan P - Full Stack Developer" 
                   className="hero-profile-image"
                 />

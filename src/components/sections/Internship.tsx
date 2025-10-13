@@ -18,7 +18,7 @@ const Internship = () => {
               <div className="internship-header-flex">
                 <div className="internship-logo-wrapper">
                   <img 
-                    src="https://media.licdn.com/dms/image/v2/C4D0BAQHxG7VqPQk0oA/company-logo_200_200/company-logo_200_200/0/1630557413803/pumo_technovation_logo?e=2147483647&v=beta&t=5vKCLqvLqxQZXqJY8JxY8lqZqJqZqJqZqJqZqJqZqJo"
+                    src="https://i.postimg.cc/zGN5T4d7/images.jpg"
                     alt="Pumo Technovation logo"
                     className="internship-logo"
                     onError={(e) => {
