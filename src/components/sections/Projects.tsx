@@ -24,7 +24,7 @@ const Projects = () => {
       image:
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&h=300&fit=crop",
       github: "https://github.com/sabarishkannanp2004-Mca/todolist",
-      live: "https://todo-list-demo.netlify.app",
+      live: "https://todolistpsk.netlify.app/",
     },
     {
       title: "Stopwatch Timer",
@@ -57,7 +57,7 @@ const Projects = () => {
       image:
         "https://i.postimg.cc/PrDjcLTs/neon-style-device-for-calculating-mathematical-data-calculator-with-buttons-with-numbers-and-math-sy.jpg",
       github: "https://github.com/sabarishkannanp2004-Mca/calculator",
-      live: "https://ecommerce-demo.netlify.app",
+      live: "https://calculatorpsk.netlify.app/",
     },
   ];
 
