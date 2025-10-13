@@ -57,7 +57,7 @@ const Projects = () => {
       image:
         "https://i.postimg.cc/PrDjcLTs/neon-style-device-for-calculating-mathematical-data-calculator-with-buttons-with-numbers-and-math-sy.jpg",
       github: "https://github.com/sabarishkannanp2004-Mca/calculator",
-      live: "https://calculatorpsk.netlify.app/",
+      live: "https://calculatorpsk.netlify.app",
     },
   ];
 
